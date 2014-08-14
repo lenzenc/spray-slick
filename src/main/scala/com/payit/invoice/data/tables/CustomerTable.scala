@@ -3,7 +3,7 @@ package com.payit.invoice.data.tables
 import com.payit.invoice.config.DBProfile
 import com.payit.invoice.models.Customer
 
-trait CustomerTable { self: DBProfile =>
+trait CustomerTable extends DBProfile {
 
   // Because there is likely no need to override the customerTable then it might just be easier to create a private
   // singleton(object) within this trait and declare the tables val to be injected into other traits instead of doing

@@ -3,7 +3,7 @@ package com.payit.invoice.data.tables
 import com.payit.invoice.config.DBProfile
 import com.payit.invoice.models.User
 
-trait UserTable { self: DBProfile with CustomerTable =>
+trait UserTable extends DBProfile with CustomerTable {
 
   val userTable = Users.table
 
