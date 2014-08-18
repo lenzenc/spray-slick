@@ -21,3 +21,17 @@ continue to make changes and auto recompile.  Do run, type the following into a 
 * Spray Routing 1.3.1
 * Spray JSON 1.2.6
 * Specs2
+
+### Cake Pattern
+This sample application is currently using the scala "Cake Pattern" for DI, see [Jonas Boner](http://jonasboner.com/2008/10/06/real-world-scala-dependency-injection-di/)
+for basic information about the cake pattern.
+ 
+I'm not yet a fan of the cake pattern but think using native scala to do DI is better than using IOC containers like
+Spring, Guice and other scala IOCs.
+
+I will likely be creating branches to this project to test out other DI approaches...for example;
+
+* Pure constructor based DI
+* Implicit constructor DI
+* [subcut](https://github.com/dickwall/subcut)
+* And others
