@@ -11,15 +11,18 @@ trait UserDAOModule { self: UserTable =>
 
   trait UserDAO {
 
-    def findAllByCustomerID(customerID: Long)(implicit s: Session)
+    def findAllByCustomerID(customerID: Long)(implicit s: Session): Seq[User]
     def findByPK(pk: Long)(implicit s: Session): Option[User]
 
   }
 
   class UserDAOImpl extends UserDAO {
 
-    def findAllByCustomerID(customerID: Long)(implicit s: Session) = null
-    def findByPK(pk: Long)(implicit s: Session): Option[User] = null
+    def findAllByCustomerID(customerID: Long)(implicit s: Session): Seq[User] = {
+      userTable.filter(_.customerID === customerID).list
+    }
+
+    def findByPK(pk: Long)(implicit s: Session): Option[User] = userTable.filter(_.id === pk).firstOption
 
   }
 

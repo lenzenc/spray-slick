@@ -19,9 +19,17 @@ trait InvoiceDAOModule { self: InvoiceTable =>
 
   class InvoiceDAOImpl extends InvoiceDAO {
 
-    def findAllByUserID(userID: Long)(implicit s: Session): Seq[Invoice] = null
-    def findAllByCustomerID(customerID: Long)(implicit s: Session): Seq[Invoice] = null
-    def findByPK(pk: Long)(implicit s: Session): Option[Invoice] = null
+    def findAllByUserID(userID: Long)(implicit s: Session): Seq[Invoice] = {
+      invoiceTable.filter(_.userID === userID).list
+    }
+
+    def findAllByCustomerID(customerID: Long)(implicit s: Session): Seq[Invoice] = {
+      (for {
+        (invoice, user) <- invoiceTable leftJoin userTable on (_.userID === _.id) if user.customerID === customerID
+      } yield invoice).list
+    }
+
+    def findByPK(pk: Long)(implicit s: Session): Option[Invoice] = invoiceTable.filter(_.id === pk).firstOption
 
   }
 

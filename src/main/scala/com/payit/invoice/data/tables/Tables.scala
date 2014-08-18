@@ -11,7 +11,7 @@ trait Tables
 
   import profile.simple._
 
-  lazy val ddl =
+  lazy val tables =
     customerTable.ddl ++
     userTable.ddl ++
     invoiceTable.ddl
