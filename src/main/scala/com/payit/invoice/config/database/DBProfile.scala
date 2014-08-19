@@ -1,4 +1,4 @@
-package com.payit.invoice.config
+package com.payit.invoice.config.database
 
 import scala.slick.driver.JdbcProfile
 
