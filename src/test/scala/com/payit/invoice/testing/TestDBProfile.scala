@@ -1,6 +1,6 @@
 package com.payit.invoice.testing
 
-import com.payit.invoice.config.DBProfile
+import com.payit.invoice.config.database.DBProfile
 
 import scala.slick.driver.{H2Driver, JdbcProfile}
 

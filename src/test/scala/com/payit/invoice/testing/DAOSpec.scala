@@ -1,7 +1,5 @@
 package com.payit.invoice.testing
 
-import java.sql.SQLException
-
 import org.specs2.execute.{Result, AsResult}
 import org.specs2.mock.Mockito
 import org.specs2.mutable._
