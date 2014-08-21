@@ -8,24 +8,20 @@ trait UserServiceModule { self: UserDAOModule with DB =>
 
   val userService: UserService
 
-  protected implicit lazy val session: Session = database.createSession
-
   trait UserService {
 
     def listByCustomerID(customerID: Long): Seq[User]
-    def getUser(userID: Long): User
+    def getUser(userID: Long): Option[User]
 
   }
 
   class UserServiceImpl extends UserService {
 
+    implicit lazy val session: Session = database.createSession
+
     def listByCustomerID(customerID: Long): Seq[User] = userDAO.findAllByCustomerID(customerID)
 
-    def getUser(userID: Long): User = {
-      userDAO.findByPK(userID).getOrElse(
-        throw new IllegalArgumentException(s"User not found for userID: $userID")
-      )
-    }
+    def getUser(userID: Long): Option[User] = userDAO.findByPK(userID)
 
   }
 

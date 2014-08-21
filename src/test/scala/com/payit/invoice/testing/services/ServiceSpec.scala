@@ -1,4 +1,4 @@
-package com.payit.invoice.testing
+package com.payit.invoice.testing.services
 
 import org.specs2.mock.Mockito
 import org.specs2.mutable._

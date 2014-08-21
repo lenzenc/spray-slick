@@ -1,6 +1,7 @@
-package com.payit.invoice.testing
+package com.payit.invoice.testing.daos
 
-import org.specs2.execute.{Result, AsResult}
+import com.payit.invoice.testing.TestDB
+import org.specs2.execute.{AsResult, Result}
 import org.specs2.mock.Mockito
 import org.specs2.mutable._
 import org.specs2.specification.AroundExample

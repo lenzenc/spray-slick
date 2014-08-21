@@ -3,7 +3,8 @@ package com.payit.invoice.data.daos
 import com.payit.invoice.SortOrder
 import com.payit.invoice.data.tables.CustomerTable
 import com.payit.invoice.models.Customer
-import com.payit.invoice.testing.{TestDBProfile, DAOSpec}
+import com.payit.invoice.testing.TestDBProfile
+import com.payit.invoice.testing.daos.DAOSpec
 import org.specs2.matcher.Scope
 
 class CustomerDAOModuleSpec extends DAOSpec {

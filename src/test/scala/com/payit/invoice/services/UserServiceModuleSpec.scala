@@ -3,7 +3,7 @@ package com.payit.invoice.services
 import com.payit.invoice.data.daos.UserDAOModule
 import com.payit.invoice.data.tables.UserTable
 import com.payit.invoice.models.User
-import com.payit.invoice.testing.{ServiceScope, ServiceSpec}
+import com.payit.invoice.testing.services.{ServiceSpec, ServiceScope}
 
 class UserServiceModuleSpec extends ServiceSpec {
 
@@ -17,8 +17,6 @@ class UserServiceModuleSpec extends ServiceSpec {
   ".listByCustomerID" should {
 
     "return a list of Users for a given customerID" in new ServiceTest {
-
-      override implicit lazy val session: Session = mock[Session]
 
       val expectedUserList = Seq(User("Bob", "Smith", 1, Some(1)))
       userDAO.findAllByCustomerID(1) returns expectedUserList
@@ -34,25 +32,20 @@ class UserServiceModuleSpec extends ServiceSpec {
 
     "return a User for a given userID" in new ServiceTest {
 
-      override implicit lazy val session: Session = mock[Session]
-
       val expectedUser = User("Bob", "Smith", 1, Some(1))
       userDAO.findByPK(1) returns Some(expectedUser)
       val user = userService.getUser(1)
       there was one(userDAO).findByPK(1)
-      user must_== expectedUser
+      user.get must_== expectedUser
 
     }
 
-    "throw an exception if no User exists for a given userID" in new ServiceTest {
-
-      override implicit lazy val session: Session = mock[Session]
+    "return None if no User exists for a given userID" in new ServiceTest {
 
       userDAO.findByPK(1) returns None
-      userService.getUser(1) must throwA[IllegalArgumentException].like {
-        case e => e.getMessage must startWith("User not found")
-      }
+      val user = userService.getUser(1)
       there was one(userDAO).findByPK(1)
+      user must beNone
 
     }
 

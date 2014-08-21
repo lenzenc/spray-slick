@@ -2,7 +2,8 @@ package com.payit.invoice.data.daos
 
 import com.payit.invoice.data.tables.InvoiceTable
 import com.payit.invoice.models.{Invoice, User, Customer}
-import com.payit.invoice.testing.{TestDBProfile, DAOSpec}
+import com.payit.invoice.testing.TestDBProfile
+import com.payit.invoice.testing.daos.DAOSpec
 import org.specs2.matcher.Scope
 
 class InvoiceDAOModuleSpec extends DAOSpec {
