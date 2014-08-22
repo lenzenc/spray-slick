@@ -1,5 +1,7 @@
-spray-slick [![Build Status](https://travis-ci.org/lenzenc/spray-slick.svg?branch=ISSUE-1)](https://travis-ci.org/lenzenc/spray-slick)
+spray-slick 
 ===========
+[![Build Status](https://travis-ci.org/lenzenc/spray-slick.svg?branch=ISSUE-1)](https://travis-ci.org/lenzenc/spray-slick)
+[![Coverage Status](https://coveralls.io/repos/lenzenc/spray-slick/badge.png?branch=master)](https://coveralls.io/r/lenzenc/spray-slick?branch=master)
 
 This is just a sample Scala application for demo purposes, it is intended to show how you might use Spray IO and Slick to create a service layer in Scala.
 
