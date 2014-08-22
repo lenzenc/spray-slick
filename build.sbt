@@ -8,6 +8,14 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-featur
 
 parallelExecution in Test := false
 
+parallelExecution in ScoverageTest := false
+
+instrumentSettings
+
+//ScoverageKeys.minimumCoverage := 80
+
+//ScoverageKeys.failOnMinimumCoverage := true
+
 resolvers ++= Seq(
   "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases",
   "Sonatype Releases"  at "http://oss.sonatype.org/content/repositories/releases",
