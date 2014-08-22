@@ -1,6 +1,8 @@
 package com.payit.invoice.config.database
 
-trait DB extends DBProfile {
+import com.payit.invoice.config.database.profile.DBProfile
+
+trait DBSession extends DBProfile {
 
   type Database = profile.simple.Database
   type Session = profile.simple.Session

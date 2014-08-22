@@ -1,6 +1,7 @@
-package com.payit.invoice.data.tables
+package com.payit.invoice.config.app
 
-import com.payit.invoice.config.database.DBProfile
+import com.payit.invoice.config.database.profile.DBProfile
+import com.payit.invoice.data.tables.{CustomerTable, InvoiceTable, UserTable}
 
 trait Tables
   extends CustomerTable
