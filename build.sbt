@@ -10,7 +10,9 @@ parallelExecution in Test := false
 
 parallelExecution in ScoverageTest := false
 
-instrumentSettings
+scoverage.ScoverageSbtPlugin.instrumentSettings
+
+CoverallsPlugin.coverallsSettings
 
 //ScoverageKeys.minimumCoverage := 80
 
