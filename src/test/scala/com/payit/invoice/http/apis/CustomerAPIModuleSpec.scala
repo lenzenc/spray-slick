@@ -1,13 +1,12 @@
 package com.payit.invoice.http.apis
 
-import com.payit.invoice.http.JsonImplicits
 import com.payit.invoice.models.Customer
 import com.payit.invoice.testing.apis.{APISpec, APIScope}
 import spray.http.StatusCodes._
 
 class CustomerAPIModuleSpec extends APISpec {
 
-  trait APITest extends APIScope with CustomerAPIModule with JsonImplicits
+  trait APITest extends APIScope with CustomerAPIModule
   {
 
     override lazy val customerService: CustomerService = mock[CustomerService]
