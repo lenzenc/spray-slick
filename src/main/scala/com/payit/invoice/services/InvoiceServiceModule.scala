@@ -1,10 +1,10 @@
 package com.payit.invoice.services
 
-import com.payit.invoice.config.database.DB
+import com.payit.invoice.config.database.DBSession
 import com.payit.invoice.data.daos.InvoiceDAOModule
 import com.payit.invoice.models.Invoice
 
-trait InvoiceServiceModule { self: InvoiceDAOModule with DB =>
+trait InvoiceServiceModule { self: InvoiceDAOModule with DBSession =>
 
   val invoiceService: InvoiceService
 

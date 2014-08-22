@@ -1,16 +1,14 @@
 package com.payit.invoice.services
 
-import com.payit.invoice.data.daos.UserDAOModule
-import com.payit.invoice.data.tables.UserTable
 import com.payit.invoice.models.User
 import com.payit.invoice.testing.services.{ServiceSpec, ServiceScope}
 
 class UserServiceModuleSpec extends ServiceSpec {
 
-  trait ServiceTest extends ServiceScope with UserServiceModule with UserDAOModule with UserTable {
+  trait ServiceTest extends ServiceScope with UserServiceModule {
 
     val userService: UserService = new UserServiceImpl
-    val userDAO: UserDAO = mock[UserDAO]
+    override lazy val userDAO: UserDAO = mock[UserDAO]
 
   }
 

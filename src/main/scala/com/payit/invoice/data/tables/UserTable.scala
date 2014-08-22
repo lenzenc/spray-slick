@@ -1,6 +1,6 @@
 package com.payit.invoice.data.tables
 
-import com.payit.invoice.config.database.DBProfile
+import com.payit.invoice.config.database.profile.DBProfile
 import com.payit.invoice.models.User
 
 trait UserTable extends DBProfile with CustomerTable {

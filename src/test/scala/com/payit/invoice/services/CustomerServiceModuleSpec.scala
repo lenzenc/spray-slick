@@ -1,17 +1,15 @@
 package com.payit.invoice.services
 
 import com.payit.invoice.SortOrder
-import com.payit.invoice.data.daos.CustomerDAOModule
-import com.payit.invoice.data.tables.CustomerTable
 import com.payit.invoice.models.Customer
 import com.payit.invoice.testing.services.{ServiceSpec, ServiceScope}
 
 class CustomerServiceModuleSpec extends ServiceSpec {
 
-  trait ServiceTest extends ServiceScope with CustomerServiceModule with CustomerDAOModule with CustomerTable {
+  trait ServiceTest extends ServiceScope with CustomerServiceModule {
 
     val customerService: CustomerService = new CustomerServiceImpl
-    val customerDAO: CustomerDAO = mock[CustomerDAO]
+    override lazy val customerDAO: CustomerDAO = mock[CustomerDAO]
 
   }
 

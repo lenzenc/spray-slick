@@ -1,16 +1,14 @@
-package com.payit.invoice.services
+package com.payit.invoice.config.app
 
-import com.payit.invoice.config.database.DB
-import com.payit.invoice.data.daos.DAO
-import com.payit.invoice.data.tables.Tables
+import com.payit.invoice.config.database.DBSession
+import com.payit.invoice.services.{CustomerServiceModule, InvoiceServiceModule, UserServiceModule}
 
-trait Service
+trait Services
   extends CustomerServiceModule
   with UserServiceModule
   with InvoiceServiceModule
-  with DB
-  with DAO
-  with Tables
+  with DAOs
+  with DBSession
 {
 
   lazy val customerService: CustomerService = new CustomerServiceImpl

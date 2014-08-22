@@ -27,6 +27,8 @@ case class Configuration(underlying: Config) {
 
   def getMilliseconds(path: String): Option[Long] = getLong(path)
 
+  def subKeys: Set[String] = underlying.root().keySet().asScala.toSet
+
   private def getValue[T](path: String, v: => T): Option[T] = {
     try {
       Option(v)
@@ -45,5 +47,7 @@ object Configuration {
   def load: Configuration = Configuration(config)
 
   private[Configuration] def asScalaList[A](l: java.util.List[A]): Seq[A] = asScalaBufferConverter(l).asScala.toList
+
+  def empty = Configuration(ConfigFactory.empty())
 
 }

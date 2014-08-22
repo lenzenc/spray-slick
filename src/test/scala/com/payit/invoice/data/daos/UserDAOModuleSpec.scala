@@ -2,15 +2,13 @@ package com.payit.invoice.data.daos
 
 import com.payit.invoice.data.tables.UserTable
 import com.payit.invoice.models.{User, Customer}
-import com.payit.invoice.testing.TestDBProfile
-import com.payit.invoice.testing.daos.DAOSpec
-import org.specs2.matcher.Scope
+import com.payit.invoice.testing.daos.{DAOScope, DAOSpec}
 
 class UserDAOModuleSpec extends DAOSpec {
 
   import profile.simple._
 
-  trait DAOTest extends Scope with UserDAOModule with UserTable with TestDBProfile {
+  trait DAOTest extends DAOScope with UserDAOModule with UserTable {
 
     val userDAO: UserDAO = new UserDAOImpl
 

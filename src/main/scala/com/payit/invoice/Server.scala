@@ -1,7 +1,9 @@
 package com.payit.invoice
 
-object Server extends App {
+object Server extends App with DefaultAppConfig {
 
-  println("Hello World!!")
+  println("Starting Application...")
+
+  initApplication()
 
 }

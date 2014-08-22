@@ -1,11 +1,11 @@
 package com.payit.invoice.services
 
 import com.payit.invoice.SortOrder
-import com.payit.invoice.config.database.DB
+import com.payit.invoice.config.database.DBSession
 import com.payit.invoice.data.daos.CustomerDAOModule
 import com.payit.invoice.models.Customer
 
-trait CustomerServiceModule { self: CustomerDAOModule with DB =>
+trait CustomerServiceModule { self: CustomerDAOModule with DBSession =>
 
   val customerService: CustomerService
 
