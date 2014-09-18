@@ -16,6 +16,13 @@ continue to make changes and auto recompile.  Do run, type the following into a 
     sbt
     ~ re-start
     
+#### End Points
+
+    http://localhost:8080/customers
+    http://localhost:8080/users?customerID=1
+    http://localhost:8080/invoices?customerID=1
+    http://localhost:8080/invoices?userID=1
+    
 ### Technologies Being Used
 * Scala 2.11.X
 * Slick 2.1.X
