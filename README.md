@@ -22,13 +22,18 @@ continue to make changes and auto recompile.  Do run, type the following into a 
     http://localhost:8080/users?customerID=1
     http://localhost:8080/invoices?customerID=1
     http://localhost:8080/invoices?userID=1
+
+### Running Unit Tests
+Do run unit test for this application, type the following commands into a terminal;
+    sbt
+    test
     
 ### Technologies Being Used
-* Scala 2.11.X
-* Slick 2.1.X
-* Spray Can 1.3.1
-* Spray Routing 1.3.1
-* Spray JSON 1.2.6
+* Scala
+* Slick
+* Spray Can
+* Spray Routing
+* Spray JSON
 * Specs2
 
 ### Cake Pattern

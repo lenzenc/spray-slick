@@ -2,7 +2,7 @@ name := "spray-slick"
 
 version := "1.0.0"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.4"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 
@@ -33,10 +33,10 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.180",
   "com.typesafe"%"config"%"1.2.1",
   "com.jolbox"%"bonecp"%"0.8.0.RELEASE",
-  "io.spray" %% "spray-can" % "1.3.1-20140423",
-  "io.spray" %% "spray-routing" % "1.3.1-20140423",
-  "io.spray" %% "spray-testkit" % "1.3.1-20140423",
-  "io.spray"%%"spray-json"%"1.2.6",
+  "io.spray" %% "spray-can" % "1.3.2",
+  "io.spray" %% "spray-routing" % "1.3.2",
+  "io.spray" %% "spray-testkit" % "1.3.2",
+  "io.spray"%%"spray-json"%"1.3.1",
   "org.specs2"%%"specs2"%"2.4"%"test",
   "com.typesafe.slick" %% "slick-codegen" % "2.1.0"
 )
